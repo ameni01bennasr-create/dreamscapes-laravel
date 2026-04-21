@@ -1,0 +1,380 @@
+/* ========================================
+   COULEURS PERSONNALISÉES (OVERRIDE BOOTSTRAP)
+   ======================================== */
+:root {
+    --dark-bg: #0c021B;
+    --neon-purple: #C4A3FF;
+    --dark-purple: #A34EFF;
+    --light-text: #F3E6FF;
+    --gradient-start: #4a00e0;
+    --gradient-end: #8e2de2;
+}
+
+/* Style de base du body */
+body {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ========================================
+   HEADER PERSONNALISÉ
+   ======================================== */
+header {
+    background-color: #0C021B;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--neon-purple);
+}
+
+#logo {
+    width: 223px;
+    height: 183px;
+    margin-left: -44px;
+    margin-top: -40px;
+    margin-bottom: -47px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li {
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+nav ul li:hover {
+    color: white;
+    text-shadow: 0 0 5px white, 0 0 10px rgba(255, 255, 255, 0.7);
+    transform: scale(1.05);
+}
+
+/* ========================================
+   BOUTONS NEON (Override Bootstrap)
+   ======================================== */
+.neon-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: var(--neon-purple);
+    background: transparent;
+    border: 2px solid var(--neon-purple);
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s;
+    box-shadow: 0 0 5px var(--neon-purple), 0 0 10px var(--neon-purple);
+}
+
+.neon-btn:hover {
+    color: #fff;
+    background-color: var(--neon-purple);
+    box-shadow: 0 0 10px var(--neon-purple), 0 0 20px var(--neon-purple);
+}
+
+/* ========================================
+   SECTIONS AVEC BACKGROUND FIXED
+   ======================================== */
+.section {
+    min-height: 80vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#welcome-section {
+    height: 100vh;
+    background-image: url('/images/welcome.jpg');
+}
+
+#about {
+    background-image: url('/images/placeholder-background-aboutme.jpg');
+}
+
+#products {
+    background-image: url('/images/placeholder-background-products.jpg');
+    background-color: var(--dark-bg);
+    min-height: 100vh;
+}
+
+/* Texte signature */
+.signature-text {
+    font-size: 9vw;
+    font-weight: 700;
+    color: #F3E6FF;
+    font-family: "Brush Script MT", cursive, sans-serif;
+    text-shadow: 0 0 10px #C4A3FF, 0 0 20px #C4A3FF, 0 0 40px rgba(196, 163, 255, 0.9);
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+
+/* ========================================
+   CARTES PRODUITS (Style unique)
+   ======================================== */
+.product-card {
+    width: 232px;
+    height: 350px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(196, 163, 255, 0.3);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 18px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(196, 163, 255, 0.4);
+}
+
+.product-card.selected {
+    border: 3px solid #FFD700;
+    box-shadow: 0 0 20px #FFD700, 0 0 40px rgba(255, 215, 0, 0.5);
+}
+
+.product-media-zone {
+    width: 80%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.product-media-zone video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-description-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(12, 2, 27, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 5;
+}
+
+.product-card:hover .product-description-overlay {
+    opacity: 1;
+}
+
+.product-card h3 {
+    font-size: 1.3rem;
+    margin: 0;
+    color: #F3E6FF;
+    text-shadow: 0 0 5px #C4A3FF;
+}
+
+/* ========================================
+   PANIER & ICONES
+   ======================================== */
+.cart-icon {
+    font-size: 24px;
+    color: var(--neon-purple);
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.cart-icon:hover {
+    color: #fff;
+    text-shadow: 0 0 5px #C4A3FF;
+    transform: scale(1.1);
+}
+
+#cart-count {
+    position: absolute;
+    top: -10px;
+    right: -15px;
+    background-color: #ff4757;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 11px;
+    font-weight: bold;
+    min-width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 5px rgba(255, 71, 87, 0.7);
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fbd2ff;
+    font-size: 12px;
+    margin-right: 15px;
+}
+
+.user-info i {
+    font-size: 24px;
+    color: #C4A3FF;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+/* ========================================
+   ZONES DE TÉLÉCHARGEMENT (UPLOAD)
+   ======================================== */
+.upload-area {
+    border: 3px dashed #8e2de2;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: rgba(142, 45, 226, 0.05);
+}
+
+.upload-area:hover {
+    background-color: rgba(142, 45, 226, 0.1);
+    transform: translateY(-5px);
+}
+
+.upload-area i {
+    font-size: 3rem;
+    color: #8e2de2;
+    margin-bottom: 15px;
+}
+
+/* ========================================
+   FOOTER & YOUTUBE
+   ======================================== */
+footer {
+    background-color: #0C021B;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.youtube-placeholder {
+    width: 355px;
+    height: 309px;
+    border: 2px solid #C4A3FF;
+    border-radius: 10px;
+    background-image: url('/images/chaine.png');
+    background-size: 100%;
+    margin: 38px auto -21px;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+.hidden-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+}
+
+.visible-on-scroll {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* ========================================
+   RESPONSIVE (Complément Bootstrap)
+   ======================================== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    #logo {
+        margin: 0;
+        width: 150px;
+        height: auto;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin: 10px 0;
+    }
+    
+    .signature-text {
+        font-size: 15vw;
+    }
+    
+    .video-container {
+        width: 100%;
+        height: 40vh;
+    }
+    
+    .youtube-placeholder {
+        width: 280px;
+        height: 243px;
+        margin: 20px auto;
+    }
+}
+
+/* Styles pour la vidéo */
+.video-container {
+    width: 80%;
+    height: 60vh;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#about-fast-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 10px;
+}
